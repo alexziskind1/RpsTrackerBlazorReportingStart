@@ -2,6 +2,8 @@ using RPS.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddTelerikBlazor();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
