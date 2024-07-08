@@ -1,7 +1,7 @@
 ﻿@page "/dashboard"
 @page "/dashboard/{Months:int}/{UserId:int}"
 
-@rendermode InteractiveServer
+
 @using RPS.Core.Models
 @using RPS.Web.Components.Dashboard
 @using RPS.Web.Components.Shared
@@ -30,9 +30,10 @@
                             <span style="margin-left: 5px;">@item.FullName</span>
                         </div>
                     }
+
                 </ItemTemplate>
             </TelerikComboBox>
-
+        
 
             <TelerikButtonGroup>
 
@@ -201,19 +202,7 @@
 
 }
 
-@code {
-    IEnumerable<MyDdlModel> myComboData = Enumerable.Range(1, 20).Select(x => new MyDdlModel { MyTextField = "item " + x, MyValueField = x });
 
-    int selectedValue { get; set; }
-
-    //in a real case, the model is usually in a separate file
-    //the model type and value field type must be provided to the dropdpownlist
-    public class MyDdlModel
-    {
-        public int MyValueField { get; set; }
-        public string MyTextField { get; set; }
-    }
-}
 
 @code {
 
@@ -232,3 +221,4 @@
         IssueChartRef.RefreshTelerikChart();
     }
 }
+

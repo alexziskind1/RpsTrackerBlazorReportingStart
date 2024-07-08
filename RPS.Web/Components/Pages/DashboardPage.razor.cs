@@ -20,9 +20,7 @@ namespace RPS.Web.Components.Pages
     public partial class DashboardPage : ComponentBase
     {
         [Inject]
-        IPtDashboardRepository RpsDashRepo { get; set; }
-
-
+        IPtDashboardRepository? RpsDashRepo { get; set; }
 
         [Parameter]
         public int? Months { get; set; }
@@ -40,11 +38,11 @@ namespace RPS.Web.Components.Pages
         public int IssueCountActive { get { return IssueCountOpen + IssueCountClosed; } }
         public decimal IssueCloseRate { get { if (IssueCountActive == 0) return 0; return Math.Round((decimal)IssueCountClosed / (decimal)IssueCountActive * 100m, 2); } }
 
-        public PtDashboardFilter Filter { get; set; }
+        public PtDashboardFilter Filter { get; set; } = new PtDashboardFilter();
 
         /* Combobox filter additions */
         [Inject]
-        private IPtUserRepository RpsUserRepo { get; set; }
+        private IPtUserRepository? RpsUserRepo { get; set; }
 
 
         public int? SelectedAssigneeId
@@ -60,11 +58,11 @@ namespace RPS.Web.Components.Pages
                 NavigationManager.NavigateTo($"/dashboard/{Months}/{UserId}");
             }
         }
-        public List<PtUser> Assignees { get; set; }
+        public List<PtUser> Assignees { get; set; } = new List<PtUser>();
 
         protected override void OnInitialized()
         {
-            Assignees = RpsUserRepo.GetAll().ToList();
+            Assignees = RpsUserRepo?.GetAll().ToList() ?? new List<PtUser>();
             base.OnInitialized();
         }
 
@@ -87,15 +85,17 @@ namespace RPS.Web.Components.Pages
                 UserId = UserId.HasValue ? UserId.Value : 0
             };
 
-
-            var statusCounts = RpsDashRepo.GetStatusCounts(Filter);
-            IssueCountOpen = statusCounts.OpenItemsCount;
-            IssueCountClosed = statusCounts.ClosedItemsCount;
-
             if (Months.HasValue)
             {
                 DateStart = Filter.DateStart;
                 DateEnd = Filter.DateEnd;
+            }
+
+            if (RpsDashRepo != null)
+            {
+                var statusCounts = RpsDashRepo.GetStatusCounts(Filter);
+                IssueCountOpen = statusCounts.OpenItemsCount;
+                IssueCountClosed = statusCounts.ClosedItemsCount;
             }
         }
     }
