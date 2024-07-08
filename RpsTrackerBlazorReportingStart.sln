@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Core", "RPS.Core\RPS.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Data", "RPS.Data\RPS.Data.csproj", "{3127DE1E-2503-4707-BBA9-5F37396BFEF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPS.Web", "RPS.Web\RPS.Web.csproj", "{88BD8314-4CBA-4F16-AB77-A9DD8B5C2F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Web", "RPS.Web\RPS.Web.csproj", "{88BD8314-4CBA-4F16-AB77-A9DD8B5C2F0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

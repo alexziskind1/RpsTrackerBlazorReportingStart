@@ -10,4 +10,9 @@
     <PackageReference Include="Telerik.UI.for.Blazor" Version="6.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RPS.Core\RPS.Core.csproj" />
+    <ProjectReference Include="..\RPS.Data\RPS.Data.csproj" />
+  </ItemGroup>
+
 </Project>
