@@ -14,6 +14,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Include="Components/Shared/Class1.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="Components/Shared/Logo.razor" />
 	  <None Include="Components\Layout\MainLayout.razor" />
 	  <None Include="Components\Layout\MainMenu.razor" />
 	  <None Include="Components\Layout\NavMenu.razor" />
