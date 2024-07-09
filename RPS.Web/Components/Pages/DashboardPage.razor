@@ -16,6 +16,8 @@
             <div class="Label"
                  style="text-align: center; color: #3D3D3D; font-size: 40px; font-family: Roboto; font-weight: 500; line-height: 48px; word-wrap: break-word">
                 Dashboard
+
+                <img src="images/avatars/males/image-1.png" class="li-avatar rounded mx-auto" />
             </div>
         </div>
         <div class="Tools" style="justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
@@ -26,7 +28,7 @@
                     @{
                         var item = context as PtUser;
                         <div class="row" style="margin-left: 5px;">
-                            <UserAvatar User="item" ClassName="li-avatar rounded mx-auto" />
+                            <img src="@item.Avatar" class="li-avatar rounded mx-auto" />
                             <span style="margin-left: 5px;">@item.FullName</span>
                         </div>
                     }
