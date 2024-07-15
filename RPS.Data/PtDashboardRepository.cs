@@ -27,9 +27,15 @@ namespace RPS.Data
 
             //var items = Find(userIdSpec.And(dateRangeSpec));
 
-            var itemsForUserAndDates = context.PtItems
+            var itemsForUserAndDates = context.PtItems;
+
+            var filteredItems = context.PtItems
                                            .Where(userIdSpec.ToExpression().Compile())
                                            .Where(dateRangeSpec.ToExpression().Compile());
+            if (filteredItems.Count() > 0)
+            {
+                itemsForUserAndDates = filteredItems.ToList();
+            }
 
             var minDate = itemsForUserAndDates.Min(i => i.DateCreated);
             var maxDate = itemsForUserAndDates.Max(i => i.DateCreated);

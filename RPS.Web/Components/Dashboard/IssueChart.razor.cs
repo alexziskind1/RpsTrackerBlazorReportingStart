@@ -19,8 +19,17 @@ namespace RPS.Web.Components.Dashboard
         public PtDashboardFilter Filter { get; set; }
 
 
+
         [Inject]
         public IPtDashboardRepository RpsDashData { get; set; }
+
+        public IssueChart()
+        {
+            Filter = new PtDashboardFilter();
+            Categories = new object[] { };
+            ItemsOpenByMonth = new List<object>();
+            ItemsClosedByMonth = new List<object>();
+        }
 
         protected override void OnParametersSet()
         {
