@@ -15,8 +15,6 @@
             <div class="Label"
                  style="text-align: center; color: #3D3D3D; font-size: 40px; font-family: Roboto; font-weight: 500; line-height: 48px; word-wrap: break-word">
                 Dashboard
-
-                <img src="images/avatars/males/image-1.png" class="li-avatar rounded mx-auto" />
             </div>
         </div>
         <div class="Tools" style="justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
@@ -26,7 +24,8 @@
                 <ItemTemplate>
                     @{
                         var item = context as PtUser;
-                        <div class="row" style="margin-left: 5px;">
+
+                        <div class="flex-container" style="margin-left: 5px;">
                             <img src="@item.Avatar" class="li-avatar rounded mx-auto" />
                             <span style="margin-left: 5px;">@item.FullName</span>
                         </div>
@@ -38,10 +37,10 @@
 
             @using Telerik.Blazor.Components.ButtonGroup
             
-            <TelerikButtonGroup>
-                <ButtonGroupButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(3))">3 Months</ButtonGroupButton>
-                <ButtonGroupButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(6))">6 Months</ButtonGroupButton>
-                <ButtonGroupButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(12))">1 Year</ButtonGroupButton>
+            <TelerikButtonGroup SelectionMode="Telerik.Blazor.ButtonGroupSelectionMode.Single">
+                <ButtonGroupToggleButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(3))">3 Months</ButtonGroupToggleButton>
+                <ButtonGroupToggleButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(6))">6 Months</ButtonGroupToggleButton>
+                <ButtonGroupToggleButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(12))">1 Year</ButtonGroupToggleButton>
             </TelerikButtonGroup>
 
 
@@ -198,9 +197,9 @@
         </div>
 
         <div class="Frame36"
-             style="displa:block; width:100%;">
+             style="display:block; width:100%;">
         
-            <IssueChart />
+            <IssueChart Filter="Filter" @ref="IssueChartRef" />
         
         </div>
 
