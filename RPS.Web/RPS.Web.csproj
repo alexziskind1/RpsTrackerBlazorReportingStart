@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -13,6 +13,11 @@
   <ItemGroup>
     <ProjectReference Include="..\RPS.Core\RPS.Core.csproj" />
     <ProjectReference Include="..\RPS.Data\RPS.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\Backlog\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
