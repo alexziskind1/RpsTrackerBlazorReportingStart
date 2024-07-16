@@ -1,7 +1,7 @@
 ﻿using RPS.Core.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace RPS.Web.Server.Models.Forms
+namespace RPS.Web.Models.Forms
 {
     public class CreateFormModel
     {
