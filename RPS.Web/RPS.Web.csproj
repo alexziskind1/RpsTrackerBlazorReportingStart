@@ -20,4 +20,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+	<ItemGroup>
+		<None Update="Components/Pages/DashboardPage.razor.css" CssScope="rps-dashboard" />
+	</ItemGroup>
+
 </Project>

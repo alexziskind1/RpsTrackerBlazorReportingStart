@@ -7,6 +7,8 @@
 @inject NavigationManager NavigationManager
 
 
+<link rel="stylesheet" href="css/dashboard.css" />
+
 <div>
     <div class="Frame11"
          style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
@@ -34,9 +36,6 @@
                 </ItemTemplate>
             </TelerikComboBox>
         
-
-            @using Telerik.Blazor.Components.ButtonGroup
-            
             <TelerikButtonGroup SelectionMode="Telerik.Blazor.ButtonGroupSelectionMode.Single">
                 <ButtonGroupToggleButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(3))">3 Months</ButtonGroupToggleButton>
                 <ButtonGroupToggleButton Icon="SvgIcon.Calendar" OnClick="@(_ => DateRangeFilter(6))">6 Months</ButtonGroupToggleButton>

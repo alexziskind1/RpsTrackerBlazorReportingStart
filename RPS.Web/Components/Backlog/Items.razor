@@ -2,21 +2,6 @@
 @using RPS.Core.Models
 @inject NavigationManager NavigationManager
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h1 class="h2">Backlog</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group mr-2">
-            <TelerikButton OnClick="@(_ => SelectPreset("My"))">My Items</TelerikButton>
-            <TelerikButton OnClick="@(_ => SelectPreset("Open"))">Open Items</TelerikButton>
-            <TelerikButton OnClick="@(_ => SelectPreset("Closed"))">Closed Items</TelerikButton>
-        </div>
-
-        <div class="btn-group mr-2">
-            <NavLink href="Create" class="btn btn-primary">Add</NavLink>
-        </div>
-
-    </div>
-</div>
 
 
 <TelerikGrid Height="550px" Data="PtItems" Pageable="true" Sortable="true" OnRowClick="@OnRowClickHandler">
@@ -96,7 +81,7 @@
     </div>*@
 
 
-<link href="css/backlog.css" rel="stylesheet" />
+
 
 @code {
     private void SelectPreset(string presetStr)
