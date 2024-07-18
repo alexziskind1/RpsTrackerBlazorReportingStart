@@ -1,29 +1,80 @@
-﻿<div class="form-row align-items-center">
-    <div class="col-sm-6">
-        <input type="text" @bind="NewTaskTitle" class="form-control" placeholder="Enter new task..." />
+﻿
+
+<div style="width: 1160px; height: 429px; padding-left: 16px; padding-right: 16px; padding-top: 24px; padding-bottom: 24px; background: white; border-top-left-radius: 4px; border-top-right-radius: 4px; border: 1px rgba(33, 37, 41, 0.13) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+    <div style="align-self: stretch; height: 379px; width:550px; flex-direction: column; justify-content: flex-start; align-items: normal; gap: 16px; display: flex">
+
+        <div style="justify-content: center; align-items: flex-start; gap: 8px; display: inline-flex">
+            <input type="text" @bind="NewTaskTitle" class="form-control" placeholder="Enter new task..." />
+            <button @onclick="AddTaskHandler" class="btn btn-primary">Add</button>
+        </div>
+
+
+        <div style="width: 1126px; height: 1px; padding-right: 2.81px; justify-content: center; align-items: center; display: inline-flex">
+            <div style="width: 1123.19px; height: 1px; position: relative; background: rgba(33, 37, 41, 0.13)"></div>
+        </div>
+
+
+
+        @foreach (var task in TaskItems)
+        {
+
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="input-group">
+
+                        <div class="input-group-text">
+                            <input type="checkbox" @bind="@task.Completed" />
+                        </div>
+
+                        <input type="text" @bind="@task.Title" class="form-control" />
+
+
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <div style="border-radius: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+                        <div style="padding: 10px; border-radius: 8px; border: 1px rgba(255, 255, 255, 0) solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+                            <div style="width: 16px; height: 16px; justify-content: center; align-items: center; display: flex">
+                                <div style="width: 16px; height: 16px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                                    <div style="width: 11px; height: 14px; background: #DC3545">
+                                        <img src="~/images/icon_bug.png" asp-page-handler="Delete" @onclick="@(e => DeleteTaskHandler(task))" style="width:40px; height:40px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
     </div>
-    <button @onclick="AddTaskHandler" class="btn btn-primary">Add</button>
 </div>
+
+<hr />
+
+
+
 
 <hr />
 
 @foreach (var task in TaskItems)
 {
-<div class="input-group mb-3 col-sm-8">
-    <div class="input-group-prepend">
-        <div class="input-group-text">
-            <input type="checkbox" @bind="@task.Completed" />
+    <div class="input-group mb-3 col-sm-8">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" @bind="@task.Completed" />
+            </div>
+        </div>
+
+        <input type="text" @bind="@task.Title" class="form-control" />
+
+        <div class="input-group-append">
+            <button asp-page-handler="Delete" @onclick="@(e => DeleteTaskHandler(task))" class="btn btn-danger pt-btn-task-delete">Delete</button>
         </div>
     </div>
-
-    <input type="text" @bind="@task.Title" class="form-control" />
-
-    <div class="input-group-append">
-        <button asp-page-handler="Delete" @onclick="@(e => DeleteTaskHandler(task))" class="btn btn-danger pt-btn-task-delete">Delete</button>
-
-        
-    </div>
-</div>
 }
 
 
