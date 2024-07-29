@@ -1,67 +1,31 @@
-﻿
-<div class="AppbarBootstrap"
-     style="width: 1440px; height: 54px; justify-content: flex-start; align-items: center; display: inline-flex">
-    <div class="Appbar"
-         style="flex: 1 1 0; height: 54px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: rgba(3.84, 86.84, 98.16, 0.06); box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.12); justify-content: space-between; align-items: center; display: flex">
-        <div class="HeadingMenu" style="justify-content: flex-start; align-items: center; gap: 72px; display: flex">
-            <div class="Logo" style="justify-content: flex-start; align-items: center; gap: 2px; display: flex">
-
+﻿<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand">
                 <Logo />
-
             </div>
-            <div class="MenuItems"
-                 style="justify-content: flex-start; align-items: flex-start; gap: 4px; display: flex">
-                <NavLink href="/dashboard">
-                     <div class="MenuItem"
-                         style="padding-left: 12px; padding-right: 12px; padding-top: 6px; padding-bottom: 6px; border-radius: 8px; border: 1px rgba(255, 255, 255, 0) solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-                    
-                         <div class="Label"
-                             style="text-align: center; color: #068597; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 24px; word-wrap: break-word">
-                                Dashboard
-                        </div>
-                    </div>
-                </NavLink>
-
-                <NavLink href="/backlog">
-                    <div class="MenuItem"
-                         style="padding-left: 12px; padding-right: 12px; padding-top: 6px; padding-bottom: 6px; border-radius: 8px; border: 1px rgba(255, 255, 255, 0) solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-                        <div class="Label"
-                             style="text-align: center; color: #068597; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 24px; word-wrap: break-word">
-                            Backlog
-                        </div>
-                    </div>
-                </NavLink>
-
-                <NavLink href="/report">
-                    <div class="MenuItem"
-                         style="padding-left: 12px; padding-right: 12px; padding-top: 6px; padding-bottom: 6px; border-radius: 8px; border: 1px rgba(255, 255, 255, 0) solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-                        <div class="Label"
-                             style="text-align: center; color: #068597; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 24px; word-wrap: break-word">
-                            Report
-                        </div>
-                    </div>
-                </NavLink>
-
-            </div>
-        </div>
-        <div class="Frame1" style="justify-content: flex-end; align-items: center; gap: 8px; display: flex">
-            <div class="Icons" style="justify-content: center; align-items: center; gap: 8px; display: flex">
-                <div class="Avatar"
-                     style="width: 30px; height: 30px; border-radius: 9999px; justify-content: flex-start; align-items: flex-start; display: flex">
-                    <div class="BaseAvatar"
-                         style="flex: 1 1 0; align-self: stretch; border-radius: 9999px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-                        
-                         <img class="Image" style="width: 30px; height: 30px; position: relative"
-                             src="images/avatars/me/me.png" />
-
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="/dashboard">Dashboard</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="/backlog">Backlog</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="/report">Report</NavLink>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="avatar">
+                        <img class="img-fluid rounded-circle" style="width: 30px; height: 30px; position: relative" src="images/avatars/me/me.png" alt="User Avatar" />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
 </div>
 
 @code {
 
 }
-
