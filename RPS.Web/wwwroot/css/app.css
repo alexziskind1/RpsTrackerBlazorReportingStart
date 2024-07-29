@@ -34,6 +34,16 @@ a {
     font-style: normal;
 }
 
+.nav-item > .app-bar-nav-link {
+    text-align: center;
+    color: #068597 !important;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
 .li-avatar {
     background-color: #eeeeee;
     width: 40px;
