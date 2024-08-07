@@ -7,6 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reports\rps_dashboard_report.trdp" />
+    <None Remove="Reports\SampleReport.trdp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Reports\rps_dashboard_report.trdp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\SampleReport.trdp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="18.1.24.709" />
+    <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="18.1.24.709" />
+    <PackageReference Include="Telerik.ReportViewer.BlazorNative" Version="18.1.24.709" />
     <PackageReference Include="Telerik.UI.for.Blazor" Version="6.0.2" />
   </ItemGroup>
 

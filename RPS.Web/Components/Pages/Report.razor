@@ -1,25 +1,42 @@
-﻿@page "/report"
+@page "/report"
 
-@using RPS.Core.Models
-@using RPS.Web.Components.Dashboard
-@using RPS.Web.Components.Backlog
-@inject NavigationManager NavigationManager
+<PageTitle>Report Viewer</PageTitle>
 
-<div class="dashboard">
-
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-
-        <div class="col-md order-md-first text-center text-md-left">
-            <h2>Report</h2>
-        </div>
-
-    </div>
-
-</div>
-
-
-<link href="css/dashboard.css" rel="stylesheet" />
+<ReportViewer ServiceUrl="/api/reports"
+              @bind-ReportSource="@ReportSource"
+              @bind-ScaleMode="@ScaleMode"
+              @bind-ViewMode="@ViewMode"
+              @bind-ParametersAreaVisible="@ParametersAreaVisible"
+              @bind-DocumentMapVisible="@DocumentMapVisible"
+              @bind-Scale="@Scale"
+              PageMode="@PageMode.ContinuousScroll"
+              PrintMode="@PrintMode.AutoSelect"
+              KeepClientAlive="true"
+              EnableSendEmail="true"
+              ServiceType="@ReportViewerServiceType.REST"
+              Height="900px"
+              Width="100%">
+    <ReportViewerSettings>
+        <SendEmailDialogSettings
+            From="from@example.com"
+            To="to@example.com"
+            Cc="cc@example.com"
+            Subject="Report sent"
+            Format="CSV"
+            Body="Attached report. <br/> <br/> Best regards, </br> ABC">
+        </SendEmailDialogSettings>
+    </ReportViewerSettings>
+</ReportViewer>
 
 @code {
+    public ScaleMode ScaleMode { get; set; } = ScaleMode.Specific;
+    public ViewMode ViewMode { get; set; } = ViewMode.Interactive;
+    public bool ParametersAreaVisible { get; set; }
+    public bool DocumentMapVisible { get; set; }
+    public double Scale { get; set; } = 1.0;
 
+    public ReportSourceOptions ReportSource { get; set; } = new ReportSourceOptions("rps_dashboard_report.trdp", new Dictionary<string, object>
+    {
+        // Add parameters if applicable
+    });
 }
